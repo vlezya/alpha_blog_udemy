@@ -30,4 +30,13 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  flash:
+    article:
+      create:
+        notice: "Article was successfully created."
+      update:
+        notice: "Article was successfully updated."
+      destroy:
+        notice: "Article was successfully destroyed."
+        alert: "Article could not be destroyed."
+    
