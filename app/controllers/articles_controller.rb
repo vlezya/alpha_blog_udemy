@@ -15,6 +15,7 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
+    @article.user = User.first
     if @article.save
       redirect_to @article, notice: t('flash.article.create.notice')
     else
