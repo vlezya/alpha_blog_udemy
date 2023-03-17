@@ -15,6 +15,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'bootsnap', require: false
 gem 'bootstrap', '~> 5.2', '>= 5.2.3'
+gem 'will_paginate', '~> 3.1', '>= 3.1.6'
 
 # Use Sass to process CSS
 # gem 'sassc-rails'
