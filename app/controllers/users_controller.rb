@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:edit, :update, :show]
+  before_action :require_user, only: [:edit, :update]
+  before_action :require_some_user, only: [:edit, :update]
 
   def index
     @users = User.paginate(page: params[:page], per_page: 3)
@@ -41,5 +43,11 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:username, :email, :password, :password_confirmation)
+  end
+
+  def require_some_user
+    unless current_user == @user
+      redirect_to @user, alert: 'You can to edit only your own profile'
+    end
   end
 end
